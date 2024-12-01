@@ -1,7 +1,7 @@
 import { DateTimePicker, LocalizationProvider, MobileDateTimePicker } from '@mui/lab';
 import { Box, Button, Container, FormControl, InputLabel, MenuItem, Select, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+
 import swal from 'sweetalert';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import useAuth from '../../../Hooks/useAuth';
@@ -67,23 +67,6 @@ const Appointment = () => {
                 </FormControl>
                 <TextField sx={{ mb: 2 }} value={user.displayName} fullWidth label="Your Name" id="fullWidth" />
                 <TextField sx={{ mb: 2 }} value={user.email} fullWidth label="Your Mail" id="fullWidth" />
-
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <Stack spacing={3}>
-                        <MobileDateTimePicker
-                            value={value}
-                            onChange={(newValue) => {
-                                setValue(newValue);
-                            }}
-                            label="Appointment Date"
-                            onError={console.log}
-                            minDate={new Date('2018-01-01T00:00')}
-                            inputFormat="yyyy/MM/dd hh:mm a"
-                            mask="___/__/__ __:__ _M"
-                            renderInput={(params) => <TextField {...params} />}
-                        />
-                    </Stack>
-                </LocalizationProvider>
 
                 <TextField sx={{ mt: 2, mb: 2 }} fullWidth label="Problem type" id="fullWidth" />
 

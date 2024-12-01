@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { signInWithPopup, GoogleAuthProvider, getAuth, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile, FacebookAuthProvider, GithubAuthProvider } from "firebase/auth";
 import initializeAuthentication from '../components/Login/Firebase/Firebase.init';
+import CryptoJS from 'crypto-js';
+
 
 
 initializeAuthentication();
@@ -143,11 +145,30 @@ const useFirebase = () => {
         setisLogin(e);
     }
 
-    const handlePasswordReset = () => {
-        sendPasswordResetEmail(auth, mail)
+    const secretKey = process.env.REACT_APP_RESET_PASSWORD_SECRET_KEY;
+
+    // Function to generate an HMAC token
+    const generateHMACToken = (email) => {
+        const timestamp = Date.now();
+        const data = `${email}.${timestamp}`;
+        const hmac = CryptoJS.HmacSHA256(data, secretKey).toString();
+        return `${data}.${hmac}`;
+    };
+    const handlePasswordReset = (email) => {
+        const token = generateHMACToken(email);
+        console.log('Generated HMAC Token:', token);
+
+        sendPasswordResetEmail(auth, email, {
+            url: `https://personal-project-patient.firebaseapp.com/reset-password?token=${encodeURIComponent(token)}`, // Custom reset URL
+        })
             .then(() => {
+                console.log('Password reset email sent with HMAC token.');
+                setError('Reset password email sent') //UI messaging, not real error
             })
-        setError('pass reset mail is sent');
+            .catch((error) => {
+                console.error('Error sending password reset email:', error);
+                setError('Error sending password reset email')
+            });
     }
 
 
