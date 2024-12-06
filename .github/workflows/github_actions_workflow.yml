@@ -18,3 +18,4 @@ jobs:
           args: >
               -Dsonar.organization=ashleysachdeva88
               -Dsonar.projectKey=healthcare-service-app
+              -Dsonar.sources=src
