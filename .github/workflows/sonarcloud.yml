@@ -28,5 +28,5 @@ jobs:
           args: |
             -Dsonar.projectKey=healthcare-service-app
             -Dsonar.organization=ashleysachdeva88
-            -Dsonar.projectBaseDir=./src 
+            -Dsonar.projectBaseDir=./healthcare-service-app/src
             -Dsonar.verbose=true
