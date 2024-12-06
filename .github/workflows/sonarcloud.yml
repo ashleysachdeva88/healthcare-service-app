@@ -20,6 +20,9 @@ jobs:
         with:
           fetch-depth: 0  # Ensure full history for SCM analysis
 
+      - name: List files in workspace
+        run: ls -R /github/workspace
+
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@v2
         env:
@@ -28,5 +31,5 @@ jobs:
           args: |
             -Dsonar.projectKey=healthcare-service-app
             -Dsonar.organization=ashleysachdeva88
-            -Dsonar.projectBaseDir=./healthcare-service-app/src
+            -Dsonar.sources=./src
             -Dsonar.verbose=true
