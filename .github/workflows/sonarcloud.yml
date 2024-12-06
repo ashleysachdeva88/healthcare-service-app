@@ -25,9 +25,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          args:
-            -Dsonar.projectKey=healthcare-service-app
+          args: |
+            -Dsonar.projectKey=ashleysachdeva88_healthcare-service-app
             -Dsonar.organization=ashleysachdeva88
-            -Dsonar.sources=src  # Point to 'src' directory
+            -Dsonar.sources=src
             -Dsonar.verbose=true  # Enable verbose output for detailed logs
-          projectBaseDir: .  # Root directory where GitHub Actions checks out the code
