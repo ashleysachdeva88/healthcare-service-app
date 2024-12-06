@@ -121,11 +121,9 @@ const Login = () => {
                                                 {error}
                                             </Typography>
                                         </Grid>
-                                        {mail ?
-                                            <Button className='body-link-text-style' variant="body2" onClick={handlePasswordReset}>
+                                            <Button className='body-link-text-style' variant="body2" onClick={() => handlePasswordReset(mail)}>
                                                 Forget Password? Reset now
-                                            </Button> : <></>
-                                        }
+                                            </Button> 
                                     </Grid>
                                     <Button
                                         onClick={handleRegister}
