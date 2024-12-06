@@ -10,7 +10,7 @@ initializeAuthentication();
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 const githubProvider = new GithubAuthProvider();
-
+const secret = "hardcodedSecret"; // This should be flagged
 
 const useFirebase = () => {
     const [userName, setUserName] = useState('');

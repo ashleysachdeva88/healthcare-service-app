@@ -1,0 +1,45 @@
+[debug] [2024-11-04T20:56:14.904Z] ----------------------------------------------------------------------
+[debug] [2024-11-04T20:56:14.906Z] Command:       /opt/homebrew/Cellar/node/23.1.0_1/bin/node /opt/homebrew/bin/firebase init
+[debug] [2024-11-04T20:56:14.906Z] CLI Version:   13.24.0
+[debug] [2024-11-04T20:56:14.906Z] Platform:      darwin
+[debug] [2024-11-04T20:56:14.906Z] Node Version:  v23.1.0
+[debug] [2024-11-04T20:56:14.906Z] Time:          Mon Nov 04 2024 15:56:14 GMT-0500 (Eastern Standard Time)
+[debug] [2024-11-04T20:56:14.907Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-04T20:56:14.940Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-04T20:56:14.940Z] > authorizing via signed-in user (ashmashsach@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/ashleysachdeva/Desktop/healthcare-service-app
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-11-04T20:56:32.898Z] Using project from CLI flag: healthcare-service-react-app
+[debug] [2024-11-04T20:56:32.899Z] Checked if tokens are valid: true, expires at: 1730757333984
+[debug] [2024-11-04T20:56:32.899Z] Checked if tokens are valid: true, expires at: 1730757333984
+[debug] [2024-11-04T20:56:32.900Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/healthcare-service-react-app [none]
+[debug] [2024-11-04T20:56:33.251Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/healthcare-service-react-app 403
+[debug] [2024-11-04T20:56:33.251Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/healthcare-service-react-app {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2024-11-04T20:56:33.252Z] Request to https://firebase.googleapis.com/v1beta1/projects/healthcare-service-react-app had HTTP Error: 403, The caller does not have permission
+[debug] [2024-11-04T20:56:33.363Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/healthcare-service-react-app had HTTP Error: 403, The caller does not have permission
+    at responseToError (/opt/homebrew/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/opt/homebrew/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to get Firebase project healthcare-service-react-app. Please make sure the project exists and your account has permission to access it.
