@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0  # Ensure full history for SCM analysis
 
       - name: List files in workspace
-        run: ls -R
+        run: ls -R src
 
       - name: Analyze with SonarCloud
         uses: SonarSource/sonarcloud-github-action@v2
