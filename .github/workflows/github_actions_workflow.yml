@@ -19,3 +19,4 @@ jobs:
               -Dsonar.organization=ashleysachdeva88
               -Dsonar.projectKey=healthcare-service-app
               -Dsonar.sources=src
+              -Dsonar.scm.provider=git
