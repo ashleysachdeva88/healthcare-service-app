@@ -29,4 +29,4 @@ jobs:
             -Dsonar.projectKey=ashleysachdeva88_healthcare-service-app
             -Dsonar.organization=ashleysachdeva88
             -Dsonar.sources=src
-            -Dsonar.verbose=true  # Enable verbose output for detailed logs
+            -Dsonar.verbose=true
